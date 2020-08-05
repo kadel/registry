@@ -38,6 +38,14 @@ commands:
         kind: run
         isDefault: true
       workingDir: $PROJECTS_ROOT
+  - exec:
+      id: test
+      component: tools
+      commandLine: "mvn test"
+      workingDir: $PROJECTS_ROOT
+      group:
+        kind: test
+        isDefault: true
       
 events:
   postStart:
