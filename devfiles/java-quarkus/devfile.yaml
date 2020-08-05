@@ -13,15 +13,9 @@ components:
       image: quay.io/eclipse/che-quarkus:nightly
       memoryLimit: 1512Mi
       mountSources: true
-      volumeMounts:
-        - name: m2
-          path: /home/user/.m2
       endpoints:
         - name: '8080/http'
           targetPort: 8080
-  - volume:
-      name: m2
-      size: 3Gi
 commands:
   - exec:
       id: init-compile
