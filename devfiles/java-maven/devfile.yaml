@@ -6,12 +6,12 @@ starterProjects:
   - name: springbootproject
     git:
       remotes:
-        origin: "https://github.com/odo-devfiles/springboot-ex.git"
+        origin: "https://github.com/kadel/spring-petclinic/"
 components:
   - name: tools
     container:
       image: quay.io/eclipse/che-java11-maven:nightly
-      memoryLimit: 512Mi
+      memoryLimit: 1024Mi
       mountSources: true
       endpoints:
         - name: 'http-8080'
@@ -29,7 +29,7 @@ commands:
       group:
         kind: build
         isDefault: true
-  - id: run 
+  - id: run
     exec:
       component: tools
       commandLine: "java -jar target/*.jar"
